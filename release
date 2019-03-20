@@ -1,7 +1,0 @@
-#!/bin/bash
-
-./genchangelog.py > ChangeLog &&
-autoreconf --install --force &&
-./configure &&
-make distcheck
-
