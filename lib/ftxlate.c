@@ -1195,7 +1195,7 @@ int parse_action_key_refresh(struct line_parser *lp, struct ftxlate *ftxlate)
 
 done:
 
-  now = time((time_t)0L);
+  now = time(NULL);
   tm = localtime(&now);
 
   /* calculate start time based on user input? */
@@ -1731,7 +1731,7 @@ static void eval_ip_src_addr_anon(struct ftxlate_action *ftxa,
   /* if key_refresh_next is set check for key to be loaded */
   if (ftxiaa->key_refresh_next) {
 
-    now = time((time_t)0L);
+    now = time(NULL);
 
     if (now > ftxiaa->key_refresh_next) {
 
@@ -1781,7 +1781,7 @@ static void eval_ip_dst_addr_anon(struct ftxlate_action *ftxa,
   /* if key_refresh_next is set check for key to be loaded */
   if (ftxiaa->key_refresh_next) {
 
-    now = time((time_t)0L);
+    now = time(NULL);
 
     if (now > ftxiaa->key_refresh_next) {
 
