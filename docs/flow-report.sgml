@@ -499,7 +499,7 @@ Enable debugging.
 <term>-s<replaceable> stat_fname</replaceable></term>
 <listitem>
 <para>
-Report configuration filename.  Defaults to <filename>@sysconfdir@/cfg/stat</filename>.
+Report configuration filename.  Defaults to <filename>/usr/local/etc/flow-tools/stat</filename>.
 </para>
 </listitem>
 </varlistentry>
@@ -609,12 +609,12 @@ Flows without a packet or octet count are ignored.
 <title>FILES</title>
 <para>
   Configuration files:
-    Symbols - <filename>@sysconfdir@/sym/*</filename>.
-    Tag - <filename>@sysconfdir@/cfg/tag.cfg</filename>.
-    Filter - <filename>@sysconfdir@/cfg/filter.cfg</filename>.
-    Mask - <filename>@sysconfdir@/cfg/mask.cfg</filename>.
-    Report - <filename>@sysconfdir@/cfg/stat.cfg</filename>.
-    Xlate - <filename>@sysconfdir@/cfg/xlate.cfg</filename>.
+    Symbols - <filename>/usr/local/etc/flow-tools/*</filename>.
+    Tag - <filename>/usr/local/etc/flow-tools/tag.cfg</filename>.
+    Filter - <filename>/usr/local/etc/flow-tools/filter.cfg</filename>.
+    Mask - <filename>/usr/local/etc/flow-tools/mask.cfg</filename>.
+    Report - <filename>/usr/local/etc/flow-tools/stat.cfg</filename>.
+    Xlate - <filename>/usr/local/etc/flow-tools/xlate.cfg</filename>.
 </para>
 </refsect1>
 

@@ -181,7 +181,7 @@ Display flows in <filename>flowfile</filename>
 <title>FILES</title>
 <para>
   Configuration files:
-    Symbols - <filename>@sysconfdir@/sym/*</filename>.
+    Symbols - <filename>/usr/local/etc/flow-tools/*</filename>.
 </para>
 </refsect1>
 

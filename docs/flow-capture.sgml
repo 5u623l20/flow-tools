@@ -163,7 +163,7 @@ be used as multipliers, ie 16 Megabytes is 16M.  Default to 0 (do not expire).
 <term>-f<replaceable> filter_fname</replaceable></term>
 <listitem>
 <para>
-Filter list filename.  Defaults to <filename>@sysconfdir@/cfg/filter</filename>.
+Filter list filename.  Defaults to <filename>/usr/local/etc/flow-tools/filter</filename>.
 </para>
 </listitem>
 </varlistentry>
@@ -313,7 +313,7 @@ Work in <filename>workdir</filename>.
 <term>-x<replaceable> xlate_fname</replaceable></term>
 <listitem>
 <para>
-Translation config file name.  Defaults to <filename>@sysconfdir@/cfg/xlate.c
+Translation config file name.  Defaults to <filename>/usr/local/etc/flow-tools/xlate.c
 fg</filename>
 </para>
 </listitem>
@@ -380,9 +380,9 @@ Empty directories are not removed.
 <title>FILES</title>  
 <para>
   Configuration files:
-    Tag - <filename>@sysconfdir@/cfg/tag.cfg</filename>.
-    Filter - <filename>@sysconfdir@/cfg/filter.cfg</filename>.
-    Xlate - <filename>@sysconfdir@/cfg/xlate.cfg</filename>.
+    Tag - <filename>/usr/local/etc/flow-tools/tag.cfg</filename>.
+    Filter - <filename>/usr/local/etc/flow-tools/filter.cfg</filename>.
+    Xlate - <filename>/usr/local/etc/flow-tools/xlate.cfg</filename>.
 </para>
 </refsect1>
 

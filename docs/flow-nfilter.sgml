@@ -243,7 +243,7 @@ Enable debugging.
 <term>-f<replaceable> filter_fname</replaceable></term>
 <listitem>
 <para>
-Filter list filename.  Defaults to <filename>@sysconfdir@/cfg/filter</filename>.
+Filter list filename.  Defaults to <filename>/usr/local/etc/flow-tools/filter</filename>.
 </para>
 </listitem>
 </varlistentry>
@@ -455,9 +455,9 @@ filter-definition foo
 <title>FILES</title>
 <para>
   Configuration files:
-    Symbols - <filename>@sysconfdir@/sym/*</filename>.
-    Tag - <filename>@sysconfdir@/cfg/tag.cfg</filename>.
-    Filter - <filename>@sysconfdir@/cfg/filter.cfg</filename>.
+    Symbols - <filename>/usr/local/etc/flow-tools/*</filename>.
+    Tag - <filename>/usr/local/etc/flow-tools/tag.cfg</filename>.
+    Filter - <filename>/usr/local/etc/flow-tools/filter.cfg</filename>.
 </para>
 </refsect1>
 

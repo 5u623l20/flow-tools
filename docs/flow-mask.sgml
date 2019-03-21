@@ -91,7 +91,7 @@ Keep time from input.
 <listitem>
 <para>
 Load masks from <filename>mask_name</filename>.  Defaults to 
-<filename>@sysconfdir@/cfg/mask</filename>
+<filename>/usr/local/etc/flow-tools/mask</filename>
 </para>
 </listitem>
 </varlistentry>
@@ -152,7 +152,7 @@ mask-definition foo
 <title>FILES</title>
 <para>
   Configuration files:
-    Mask - <filename>@sysconfdir@/cfg/mask.cfg</filename>.
+    Mask - <filename>/usr/local/etc/flow-tools/mask.cfg</filename>.
 </para>
 </refsect1>
 
