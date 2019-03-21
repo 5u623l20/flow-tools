@@ -151,7 +151,8 @@ if (rpt->out->fields & FT_STAT_FIELD_LAST) {\
   struct A *B;\
   struct tally tally;\
   char fmt_buf1[32], fmt_buf[1024];\
-  int len, fmt, sort_flags, sort_offset, comma;\
+  int len, fmt, sort_flags, comma;\
+  int sort_offset = 0;\
   fmt = FMT_JUST_LEFT;\
   fmt_buf1[0] = fmt_buf[0] = 0;\
   bzero(&tally, sizeof tally);\
