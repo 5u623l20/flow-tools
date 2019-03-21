@@ -112,7 +112,7 @@ void fterr_info(const char *fmt, ...)
     fprintf(((fterr_file) ? fterr_file : stderr), "%s\n", buf2);
 
   if (fterr_flags & FTERR_SYSLOG)
-    syslog(LOG_INFO, buf);
+    syslog(LOG_INFO, "%s", buf);
 
 } /* fterr_info */
 
