@@ -99,7 +99,7 @@ int main(int argc, char **argv)
 #endif
 #endif
 
-  time_startup = time((time_t)0L);
+  time_startup = time(NULL);
 
   out_fname = (char*)0L;
   nflows = 0;
@@ -360,7 +360,7 @@ mcast_done:
     ((ftset.z_level) ? FT_IO_FLAG_ZINIT : 0) ) < 0)
     fterr_errx(1, "ftio_init(): failed");
 
-  time_start = (uint32_t)time((time_t)0L);
+  time_start = (uint32_t)time(NULL);
 
   ftio_set_comment(&ftio, ftset.comments);
   ftio_set_cap_hostname(&ftio, ftset.hnbuf);
@@ -429,7 +429,7 @@ mcast_done:
       }
     }
 
-    now = time((time_t)0L);
+    now = time(NULL);
 
     /* reset */
     bzero (&tv, sizeof tv);
@@ -683,7 +683,7 @@ skip1:
   /* rewrite header with updated info */
   if (out_fd_plain) {
   
-    time_end = (uint32_t)time((time_t)0L);
+    time_end = (uint32_t)time(NULL);
 
     ftio_set_cap_time(&ftio, time_start, time_end);
     ftio_set_flows_count(&ftio, nflows);

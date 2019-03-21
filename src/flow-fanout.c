@@ -130,7 +130,7 @@ int main(int argc, char **argv)
 #endif
 #endif
 
-  time_startup = time((time_t)0L);
+  time_startup = time(NULL);
 
   /* init fterr */
   fterr_setid(argv[0]);
@@ -570,7 +570,7 @@ mcast_done:
       }
     }
 
-    now = time((time_t)0L);
+    now = time(NULL);
 
     /* reset */
     bzero (&tv, sizeof tv);
