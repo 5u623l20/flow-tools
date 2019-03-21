@@ -55,4 +55,4 @@ SUFFIXES = .sgml .1 .html .1.in .html.in
 .sgml.html.in:
 	openjade -V nochunks -c /usr/local/share/sgml/docbook/dsssl/modular/catalog -c /usr/local/share/sgml/iso8879ccatalog -c /usr/local/share/sgml/openjade/catalog -d /usr/local/share/sgml/docbook/dsssl/modular/html/docbook.dsl -t sgml $*.sgml > $*.html.in
 
-all-am: Makefile $(man_MANSIN) $(man_HTMLS)
+all-am: Makefile $(man_MANSIN)
