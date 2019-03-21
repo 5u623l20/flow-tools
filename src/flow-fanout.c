@@ -871,6 +871,7 @@ retry:
     } /* if FD_ISSET */
 
 skip1:
+    ;
 
     if (sig_quit_flag) {
       fterr_info("SIGQUIT");
