@@ -134,7 +134,7 @@ void fterr_err(int code, const char *fmt, ...)
 
   if (fterr_flags & FTERR_SYSLOG) {
     snprintf(buf2, 1024, "%s: %s", buf, strerror(errno));
-    syslog(LOG_INFO, buf2);
+    syslog(LOG_INFO, "%s", buf2);
   }
 
   if (fterr_exit)
@@ -159,7 +159,7 @@ void fterr_errx(int code, const char *fmt, ...)
   }
 
   if (fterr_flags & FTERR_SYSLOG)
-    syslog(LOG_INFO, buf);
+    syslog(LOG_INFO, "%s", buf);
 
   if (fterr_exit)
     fterr_exit(code);
@@ -183,7 +183,7 @@ void fterr_warnx(const char *fmt, ...)
   }
 
   if (fterr_flags & FTERR_SYSLOG)
-    syslog(LOG_INFO, buf);
+    syslog(LOG_INFO, "%s", buf);
 
 } /* fterr_warnx */
 
@@ -205,7 +205,7 @@ void fterr_warn(const char *fmt, ...)
 
   if (fterr_flags & FTERR_SYSLOG) {
     snprintf(buf2, 1024, "%s: %s", buf, strerror(errno));
-    syslog(LOG_INFO, buf2);
+    syslog(LOG_INFO, "%s", buf2);
   }
 
 } /* fterr_warn */
