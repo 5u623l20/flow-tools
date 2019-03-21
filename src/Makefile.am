@@ -18,7 +18,7 @@ bin_PROGRAMS = flow-capture flow-cat flow-stat flow-print flow-dscan \
 ftbuild.h: ftbuild.sh
 	./ftbuild.sh $@
 
-LDADD = ../lib/libft.so
+LDADD = ../lib/libft.la
 AM_CFLAGS = $(PICFLAGS)
 AM_LDFLAGS = $(PILDFLAGS)
 
