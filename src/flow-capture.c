@@ -176,7 +176,7 @@ char **argv;
 #endif
 #endif
 
-  time_startup = time((time_t)0L);
+  time_startup = time(NULL);
 
   bzero (&rot, sizeof rot);
   bzero (&cap_file, sizeof cap_file);
