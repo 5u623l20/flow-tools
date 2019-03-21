@@ -790,7 +790,7 @@ int parse_action_type(struct line_parser *lp, struct ftxlate *ftxlate)
 
   /* allocate storage for action if required */
 
-  if ((lp->cur_action->type == FT_XLATE_TYPE_IP_ADDR_PRIV_MASK) == true) {
+  if ((lp->cur_action->type == FT_XLATE_TYPE_IP_ADDR_PRIV_MASK) == 1) {
 
     if (!(lp->cur_action->action = malloc(sizeof
       (struct ftxlate_act_ip_addr_priv_mask)))) {
@@ -801,7 +801,7 @@ int parse_action_type(struct line_parser *lp, struct ftxlate *ftxlate)
     bzero(lp->cur_action->action, sizeof
       (struct ftxlate_act_ip_addr_priv_mask));
 
-  } else if ((lp->cur_action->type == FT_XLATE_TYPE_IP_PORT_PRIV_MASK) == true) {
+  } else if ((lp->cur_action->type == FT_XLATE_TYPE_IP_PORT_PRIV_MASK) == 1) {
 
     if (!(lp->cur_action->action = malloc(sizeof
       (struct ftxlate_act_ip_port_priv_mask)))) {
