@@ -11,6 +11,11 @@ extern struct acl_list acl_list;
 
 int x;
 
+#if YYBISON
+union YYSTYPE;
+int yylex(union YYSTYPE *, void *);
+#endif
+
 %}
 
 %union {
@@ -343,3 +348,4 @@ igmp_val: NUM
 
 
 %%
+int yylex(YYSTYPE *, void *);
