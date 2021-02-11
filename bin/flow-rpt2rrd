@@ -4,7 +4,6 @@ import getopt
 import os
 import rrdtool
 import sys
-import string
 
 #
 # flow-rpt2rrd - convert flow-report output to rrd format
@@ -117,13 +116,13 @@ class ftrpt2rrd:
 
   def set_use_fields(self,f):
     self.use_fields = {}
-    for i in string.split(f, ','):
+    for i in f.split(','):
       self.use_fields[i] = 1
     
   def set_use_key_names(self,f):
     self.use_key_names = {}
     self.use_key_names_special = {}
-    for i in string.split(f, ','):
+    for i in f.split(','):
       if i[:6] == 'total_':
         self.use_key_names_special[i] = 1
       else:
@@ -141,7 +140,7 @@ class ftrpt2rrd:
 
   def setrrd(self, storage, path, postfix):
     (self.rrd_5min, self.rrd_30min, self.rrd_2hr, self.rrd_1day) = \
-      string.split(storage,':')
+      storage.split(':')
     self.rrd_path = path
     self.rrd_postfix = postfix
 
@@ -179,7 +178,7 @@ class ftrpt2rrd:
 
       rrdtool.create(rrdFile, *rrdParams)
       if self.debug:
-        print >>sys.stderr, string.join(rrdParams,' ')
+        print >>sys.stderr, rrdParams.join(' ')
 
     # foreach value
 
@@ -208,14 +207,14 @@ class ftrpt2rrd:
       if (not self.in_data) :
 
         if line[:13] == '# first-flow:':
-          self.start_time = (string.split(line[14:]))[0]
+          self.start_time = line[14:].split()[0]
 
         # handle the totals record differently
         if line[:53] == '# rec1: records,ignores,flows,octets,packets,duration':
-          tmp = string.split(line[8:], ',')
+          tmp = line[8:].split(',')
           line = f.readline().strip()
           tmp_use_fields_index = {}
-          tmp_splt = string.split(line, ',')
+          tmp_splt = line.split(',')
           x = 0
           ds = 0
           for i in tmp:
@@ -232,7 +231,7 @@ class ftrpt2rrd:
           self.in_data = 1
     
           # foreach element in field names
-          for i in string.split(line[8:],','):
+          for i in line[8:].split(','):
     
             # remove key designators
             if i[-1:] == '*':
@@ -267,7 +266,7 @@ class ftrpt2rrd:
         # if in the data area and not a comment, store it
         if self.in_data and line [:1] != '#':
     
-          splt = string.split(line, ',')
+          splt = line.split(',')
 
           # combine the key fields to form one key
           k = ''

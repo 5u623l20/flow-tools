@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import sys
-import string
 import getopt
 import signal
 
@@ -294,10 +293,10 @@ class ftrptfmt:
             self.got_totals = 1
             line2 = f.readline()
             line2 = line2.strip()
-            splt = string.split(line2,',')
+            splt = line2.split(',')
 
             x = 0
-            for i in string.split(line[8:],','):
+            for i in line[8:].split(','):
               self.field_vals[i] = splt[x]
               x += 1
 
@@ -306,10 +305,10 @@ class ftrptfmt:
 
               line2 = f.readline()
               line2 = line2.strip()
-              splt = string.split(line2,',')
+              splt = line2.split(',')
 
               x = 0
-              for i in string.split(line[8:],','):
+              for i in line[8:].split(','):
                 self.field_vals[i] = splt[x]
                 self.field_vals[x] = splt[x]
                 x += 1
@@ -321,13 +320,13 @@ class ftrptfmt:
     
             # foreach element in field names
             x = 0
-            for i in string.split(line[8:],','):
+            for i in line[8:].split(','):
 
               # remove key designators
               if i[-1:] == '*':
                 i = i[:-1]
                 self.field_keys[self.field_total] = 1
-              i = string.lower(i)
+              i = i.lower()
               self.field_idx[i] = self.field_total
     
               # default to the length of the header
@@ -346,7 +345,7 @@ class ftrptfmt:
         # if in the data area and not a comment, store it
         if self.in_data and line [:1] != '#':
     
-          splt = string.split(line, ',')
+          splt = line.split(',')
     
           for i in xrange(self.field_total):
 
@@ -373,7 +372,7 @@ class ftrptfmt:
   def pickdisplay(self, f):
 
     self.field_use['all'] = 0
-    for i in string.split(f, ','):
+    for i in f.split(','):
       self.field_use[i] = 1
     
     # figure out which fields are okay to print

@@ -4,7 +4,6 @@ import getopt
 import os
 import rrdtool
 import sys
-import string
 
 #
 # process syslog output from flow-capture and flow-fanout into a rrd
